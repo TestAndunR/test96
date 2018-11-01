@@ -1,0 +1,256 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "ae78d98b-238e-41d7-a5e4-9cc6458e76a5": {
+        "id": "ae78d98b-238e-41d7-a5e4-9cc6458e76a5",
+        "parent": null,
+        "name": "test1",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "d6dd33be-5839-4536-99f3-228994b16180",
+          "9cc7ec6d-c7c5-4b87-8e4e-c8e7fcfea81e",
+          "ddfc5f8f-cda2-4ba8-8846-3dffcd12355e"
+        ],
+        "isRemovable": false,
+        "filePath": "test1"
+      },
+      "d6dd33be-5839-4536-99f3-228994b16180": {
+        "id": "d6dd33be-5839-4536-99f3-228994b16180",
+        "parent": "ae78d98b-238e-41d7-a5e4-9cc6458e76a5",
+        "name": "lambda3.js",
+        "type": "LAMBDA_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "test1/lambda3.js",
+        "code": "exports.handler = function(event, context, callback) {\n    console.log(\"Yeas\");\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "triggers": [
+          {
+            "resourceName": "apigusEast1hotspacesvendor16382dd9promopost",
+            "config": {}
+          }
+        ],
+        "config": {
+          "runtime": "nodejs8.10",
+          "timeout": 60,
+          "memory": 128
+        },
+        "testCases": {
+          "0d561266-6c30-44a8-828a-c6b68d591f6b": {
+            "id": "0d561266-6c30-44a8-828a-c6b68d591f6b",
+            "name": "Unnamed event",
+            "functionId": "d6dd33be-5839-4536-99f3-228994b16180",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          }
+        }
+      },
+      "9cc7ec6d-c7c5-4b87-8e4e-c8e7fcfea81e": {
+        "id": "9cc7ec6d-c7c5-4b87-8e4e-c8e7fcfea81e",
+        "parent": "ae78d98b-238e-41d7-a5e4-9cc6458e76a5",
+        "name": "lambda.js",
+        "type": "LAMBDA_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "test1/lambda.js",
+        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\nconsole.log(\"Test\")\nexports.handler = function (event, context, callback) {\n    ddb.scan({\n        TableName: 'Promotions'\n    }).promise().then(function (data) {\n        //your logic goes here\n    }).catch(function (err) {\n        //handle error\n    });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "triggers": [
+          {
+            "resourceName": "apigusEast1hotspacesvendor16382dd9promopost",
+            "config": {}
+          }
+        ],
+        "config": {
+          "runtime": "nodejs8.10",
+          "timeout": 60,
+          "memory": 128
+        }
+      },
+      "ddfc5f8f-cda2-4ba8-8846-3dffcd12355e": {
+        "id": "ddfc5f8f-cda2-4ba8-8846-3dffcd12355e",
+        "parent": "ae78d98b-238e-41d7-a5e4-9cc6458e76a5",
+        "name": "test",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "e175d333-2eeb-4cba-9595-4696c88cdf78",
+          "669fa892-c1ec-4535-aedc-1e52741bd4e2",
+          "d3a7e9fb-a130-4ea6-884d-9ff1daaab443"
+        ],
+        "isRemovable": true,
+        "filePath": "test1/test"
+      },
+      "e175d333-2eeb-4cba-9595-4696c88cdf78": {
+        "id": "e175d333-2eeb-4cba-9595-4696c88cdf78",
+        "parent": "ddfc5f8f-cda2-4ba8-8846-3dffcd12355e",
+        "name": "test",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "3bedf9c9-685b-4974-8adb-7f236fe28220"
+        ],
+        "isRemovable": true,
+        "filePath": "test1/test/test"
+      },
+      "669fa892-c1ec-4535-aedc-1e52741bd4e2": {
+        "id": "669fa892-c1ec-4535-aedc-1e52741bd4e2",
+        "parent": "ddfc5f8f-cda2-4ba8-8846-3dffcd12355e",
+        "name": "lambda.js",
+        "type": "LAMBDA_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "test1/test/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "triggers": [],
+        "config": {
+          "runtime": "nodejs8.10",
+          "timeout": 60,
+          "memory": 128
+        }
+      },
+      "3bedf9c9-685b-4974-8adb-7f236fe28220": {
+        "id": "3bedf9c9-685b-4974-8adb-7f236fe28220",
+        "parent": "e175d333-2eeb-4cba-9595-4696c88cdf78",
+        "name": "lambda.js",
+        "type": "LAMBDA_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "test1/test/test/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "triggers": [],
+        "config": {
+          "runtime": "nodejs8.10",
+          "timeout": 60,
+          "memory": 128
+        }
+      },
+      "d3a7e9fb-a130-4ea6-884d-9ff1daaab443": {
+        "id": "d3a7e9fb-a130-4ea6-884d-9ff1daaab443",
+        "parent": "ddfc5f8f-cda2-4ba8-8846-3dffcd12355e",
+        "name": "test2",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "08003185-7d1a-4e48-9fc8-4cd8e2b3b509"
+        ],
+        "isRemovable": true,
+        "filePath": "test1/test/test2"
+      },
+      "08003185-7d1a-4e48-9fc8-4cd8e2b3b509": {
+        "id": "08003185-7d1a-4e48-9fc8-4cd8e2b3b509",
+        "parent": "d3a7e9fb-a130-4ea6-884d-9ff1daaab443",
+        "name": "lambda.js",
+        "type": "LAMBDA_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "test1/test/test2/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "triggers": [],
+        "config": {
+          "runtime": "nodejs8.10",
+          "timeout": 60,
+          "memory": 128
+        }
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "ae78d98b-238e-41d7-a5e4-9cc6458e76a5",
+    "openFiles": [
+      "9cc7ec6d-c7c5-4b87-8e4e-c8e7fcfea81e"
+    ],
+    "currentFileId": "9cc7ec6d-c7c5-4b87-8e4e-c8e7fcfea81e",
+    "resources": {
+      "apigusEast1hotspacesvendor16382dd9promopost": {
+        "name": "apigusEast1hotspacesvendor16382dd9promopost",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "hotspacesvendor16382dd9",
+          "apiVersion": "2018-05-24T17:52:00Z",
+          "apiId": "csobb7r9dg",
+          "endpointType": "EDGE",
+          "rootResourceId": "6rn8dq018e",
+          "existingResources": {
+            "/": "6rn8dq018e",
+            "/promo/{proxy+}": "97qc6f",
+            "/promo": "lo42ta"
+          },
+          "resourceMode": 1,
+          "resourcePath": "/promo",
+          "resourceName": "promo",
+          "resourceId": "lo42ta",
+          "restMethod": "POST",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 1,
+          "stageName": "Prod",
+          "stageDeploymentId": "hlrxrw"
+        },
+        "globallyEditable": false
+      },
+      "ddbPromotions": {
+        "name": "ddbPromotions",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 1,
+          "operation": "scan",
+          "table": {
+            "arn": "arn:aws:dynamodb:us-east-1:318300609668:table/Promotions",
+            "name": "Promotions",
+            "partitionKey": "PromoId",
+            "partitionKeyType": "S",
+            "hasSortKey": true,
+            "sortKey": "VendorId",
+            "sortKeyType": "S",
+            "mode": 1
+          },
+          "parameters": {
+            "Key": {},
+            "Item": {},
+            "ExpressionAttributeValues": {}
+          },
+          "validator": {
+            "validatableFields": {},
+            "validity": true
+          },
+          "valid": true
+        },
+        "globallyEditable": false
+      }
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    },
+    "lambdaId": "d6dd33be-5839-4536-99f3-228994b16180"
+  },
+  "PROJECT_META": {
+    "projectName": "test1",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "lastSave": 1541071436953
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "test2",
+      "url": "https://github.com/TestAndunR/test96"
+    }
+  }
+}
